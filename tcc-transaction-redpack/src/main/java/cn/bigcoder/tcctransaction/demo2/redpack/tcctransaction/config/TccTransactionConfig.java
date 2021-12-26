@@ -1,4 +1,4 @@
-package com.example.tcctransactiona.config;
+package cn.bigcoder.tcctransaction.demo2.redpack.tcctransaction.config;
 
 import org.mengyun.tcctransaction.repository.RedisTransactionRepository;
 import org.mengyun.tcctransaction.repository.TransactionRepository;
@@ -26,7 +26,7 @@ public class TccTransactionConfig {
     @Bean("transactionRepository")
     public TransactionRepository memoryStoreTransactionRepository2(JedisPool jedisPool) {
         RedisTransactionRepository repository = new RedisTransactionRepository();
-        repository.setDomain("TCC:DUBBO:ORDER:");
+        repository.setDomain("TCC:DUBBO:REDPACK:");
         repository.setSerializer(new KryoTransactionSerializer());
         repository.setJedisPool(jedisPool);
         return repository;

@@ -1,7 +1,9 @@
 package com.example.tcctransactiona.service;
 
-import cn.bigcoder.tcctransaction.demo2.dto.InventoryOrderDTO;
-import cn.bigcoder.tcctransaction.demo2.service.IInventoryService;
+import cn.bigcoder.tcctransaction.demo2.inventory.dto.InventoryOrderDTO;
+import cn.bigcoder.tcctransaction.demo2.inventory.service.IInventoryService;
+import cn.bigcoder.tcctransaction.demo2.redpack.dto.RedpackOrderDTO;
+import cn.bigcoder.tcctransaction.demo2.redpack.service.IRedpackService;
 import com.example.tcctransactiona.dto.OrderDTO;
 import org.apache.dubbo.config.annotation.DubboReference;
 import org.mengyun.tcctransaction.api.Compensable;
@@ -23,16 +25,27 @@ public class OrderServiceImpl implements IOrderService {
 
     @DubboReference
     private IInventoryService inventoryService;
+    @DubboReference
+    private IRedpackService redpackService;
 
 
     @Override
-    @Compensable(confirmMethod = "confirmOrder", cancelMethod = "cancelOrder", transactionContextEditor = DubboTransactionContextEditor.class)
+    @Compensable(confirmMethod = "confirmOrder", cancelMethod = "cancelOrder")
     public int placeOrder(OrderDTO orderDTO) {
+        //事务参与者1
         InventoryOrderDTO inventoryOrderDTO = new InventoryOrderDTO();
         inventoryOrderDTO.setOrderNo(UUID.randomUUID().toString());
         inventoryOrderDTO.setAmount(10);
         inventoryOrderDTO.setItemId(orderDTO.getItemId());
         int result = inventoryService.placeOrder(inventoryOrderDTO);
+
+        // 事务参与者2
+        //RedpackOrderDTO redpackOrderDTO = new RedpackOrderDTO();
+        //redpackOrderDTO.setOrderNo(UUID.randomUUID().toString());
+        //redpackOrderDTO.setAmount(10);
+        //redpackOrderDTO.setItemId(orderDTO.getItemId());
+        //redpackService.placeOrder(redpackOrderDTO);
+
         int i = 1 / 0;
         return 0;
     }

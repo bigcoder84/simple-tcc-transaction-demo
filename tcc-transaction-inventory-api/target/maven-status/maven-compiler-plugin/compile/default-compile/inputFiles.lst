@@ -1,2 +1,2 @@
-/mnt/e/software-engineer/java/workspace/tcc-transaction-demo2/tcc-transaction-inventory-api/src/main/java/cn/bigcoder/tcctransaction/demo2/dto/InventoryOrderDTO.java
-/mnt/e/software-engineer/java/workspace/tcc-transaction-demo2/tcc-transaction-inventory-api/src/main/java/cn/bigcoder/tcctransaction/demo2/service/IInventoryService.java
+/mnt/e/software-engineer/java/workspace/tcc-transaction-demo2/tcc-transaction-inventory-api/src/main/java/cn/bigcoder/tcctransaction/demo2/inventory/dto/InventoryOrderDTO.java
+/mnt/e/software-engineer/java/workspace/tcc-transaction-demo2/tcc-transaction-inventory-api/src/main/java/cn/bigcoder/tcctransaction/demo2/inventory/service/IInventoryService.java

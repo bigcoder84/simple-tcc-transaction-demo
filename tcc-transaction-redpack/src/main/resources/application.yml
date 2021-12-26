@@ -1,0 +1,16 @@
+dubbo:
+  application:
+    name: tcc-transaction-redpack
+  registry:
+    address: nacos://192.168.0.10:7008
+  config-center:
+    address: nacos://192.168.0.10:7008
+  metadata-report:
+    address: nacos://192.168.0.10:7008
+  protocol:
+    name: dubbo
+    port: 22387
+spring:
+  redis:
+    host: 192.168.0.10
+    port: 7002

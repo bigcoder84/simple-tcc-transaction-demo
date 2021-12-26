@@ -1,2 +1,2 @@
-cn/bigcoder/tcctransaction/demo2/dto/InventoryOrderDTO.class
-cn/bigcoder/tcctransaction/demo2/service/IInventoryService.class
+cn/bigcoder/tcctransaction/demo2/inventory/service/IInventoryService.class
+cn/bigcoder/tcctransaction/demo2/inventory/dto/InventoryOrderDTO.class
